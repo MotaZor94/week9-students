@@ -25,17 +25,22 @@
     </section>
 
     <section class="detention-assign">
+        @csrf
+    <h2>Give detention</h2>
+
+    <section class="detention-assign">
+           
         <h2>Give detention</h2>
 
-        <form action="" method="post">
-
-            <input type="text" name="subject" placeholder="Reason for detention">
+    <form action="{{ action('DetentionController@store') }}" method="post">
+       @csrf     
+        <input type="text" name="subject" placeholder="Reason for detention">
 
             <textarea name="description" placeholder="Thorough description"></textarea>
 
             <input type="submit" value="Send an owl">
         </form>
     </section>
-
 </div>
-@endsection
+
+

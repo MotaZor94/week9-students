@@ -20,4 +20,7 @@ Route::get('/student/{student_slug}', 'StudentController@show');
 Route::get('/students', 'StudentController@index');
 
 
+Route::post('/student/{student_slug}', 'DetentionController@store');
+
+
 Auth::routes();
