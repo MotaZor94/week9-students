@@ -10,6 +10,6 @@ class Student extends Model
     //
     public function image()
     {
-        
+        return $this->belongsToMany('student_image');
     }
 }
