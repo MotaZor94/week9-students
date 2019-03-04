@@ -13,6 +13,11 @@
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
+
+Route::get('/student/{student_slug}', 'StudentController@show');
+
+Route::get('/students', 'StudentController@index');
+
 
 Auth::routes();

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Student;
+
 class StudentController extends Controller
 {
     //
@@ -18,5 +20,15 @@ class StudentController extends Controller
         $view = view('student/show');
         $view->student = $student;
         return $view;
+    }
+
+    public function index()
+    {
+        $all_students = Student::orderBy('name','asc')->get();
+
+        $view = view('student/index',compact('all_students'));
+
+        return $view;
+
     }
 }
